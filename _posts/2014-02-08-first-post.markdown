@@ -13,3 +13,12 @@ categories: common
 我打算先从c++11开始， 穿插一些算法，毕竟自己还是挺喜欢那些算法面试题的（虽然在国内，这些题目没啥用, google, facebook这类的公司才会面试这些玩意吧，呵呵)然后打算再仔细看一遍apue 以及linux 网络编程相关的，慢慢来吧， 希望自己坚持下来，一周一篇左右的量，持之以恒
 
 加油！
+
+<pre class="prettyprint linenums">
+#include &lt;iostream>
+using namespace std;
+int main() {
+	cout << "GO GO GO!" << endl;
+	return 0;
+}
+</pre>
