@@ -20,7 +20,7 @@ troubleshooting skills and a talent for developing innovative solutions to unusu
 >> Pialot project b2b and google finace China.
 
 #Education
-> 英雄末问出处
+> 英雄莫问出处
 
 #[Github](http://github.com/starboy520)
 
