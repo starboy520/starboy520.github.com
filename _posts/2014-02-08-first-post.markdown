@@ -14,11 +14,13 @@ categories: common
 
 加油！
 
-<pre class="prettyprint linenums">
-#include &lt;iostream>
+
+<script type="syntaxhighlighter" class="brush: cpp"><![CDATA[
+#include <iostream>
 using namespace std;
 int main() {
 	cout << "GO GO GO!" << endl;
 	return 0;
 }
-</pre>
+]]></script>
+
