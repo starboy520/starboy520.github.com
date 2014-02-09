@@ -14,7 +14,6 @@ categories: common
 
 加油！
 
-
 <script type="syntaxhighlighter" class="brush: cpp"><![CDATA[
 #include <iostream>
 using namespace std;
