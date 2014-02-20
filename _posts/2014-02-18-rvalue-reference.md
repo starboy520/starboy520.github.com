@@ -3,12 +3,13 @@ layout: post
 title:  "Rvalue reference"
 categories: c++11
 ---
+Actullay this artical content are most from the two reference articals.
 
 #Lvalue And Rvalue
 
 In c++11 standard expressions are not just categoried by lvalue and rvalue, but also gvalue, xvalue. Here I do not want to goto details. 
 
-To simplify, use c++ 03 standard, an expression is a lvalue or a rvalue through not exactly, wh can distigush them in practice with follows:
+To simplify, use c++ 03 standard, an expression is a lvalue or a rvalue through not exactly, wh can distingush them in practice with follows:
 
 1. If you can take address of an expression (maybe using & operators), then it's a lvalue.
 2. If the type of an expression is a `lvalue reference(T& or const T&) then it's a lvalue`.
@@ -28,8 +29,8 @@ j = foo_bar(); // ok foo_bar() is a rvalue.
 ]]></script>
 
 #Rvalue reference
-`Rvalue reference` can be distincted with old c++ 03 refenerce(now we called `Lvalue reference`).
-It's a new feature in c++11 standard, It's purpose to solve move semantics and it's a basis of perfect forwarding(Details below).
+`Rvalue reference` can be distincted with old c++ 03 reference(now we called `Lvalue reference`).
+It's a new feature in c++11 standard, It's purpose is to solve move semantics and it's a basis of perfect forwarding.
 
 Rvalues reference is such as T&& (But T&& does not really means Rvalue reference below details), and Lvalue reference is T&. 
 
@@ -64,7 +65,7 @@ depends on if it has a name, then it's a rvalue, otherwise it's a rvalue.
 
 So the above code actually calls `X(X const& rhs);`
 
-Here it's a example that declared rvalue reference and does not have a name,
+Here it's an example that declared rvalue reference and does not have a name,
 <script type="syntaxhighlighter" class="brush: cpp"><![CDATA[
 X&& goo();
 X x = goo(); // Calls X(X&& rhs); because right side does not have a name.
@@ -76,7 +77,7 @@ X x = goo(); // Calls X(X&& rhs); because right side does not have a name.
 Actually '&&' in a type declaration sometimes means rvalue reference, but sometime it means a rvalue reference or lvalue reference, which scott meyers calls it universal reference.
 > ###If a variable or parameter is declared to have type T&& for some deduced type T, that variable or parameter is a universal reference.###
 
-Here the requirement is that the universal reference are found involved type deduction. It's sayed that universal reference are only limited in `function templates and auto`, because auto declared variables are essentially the same as for templates)
+Here the requirement is that the universal reference are found involved `type deduction`. It's said that universal reference are only limited in `function templates and auto`, because auto declared variables are essentially the same as for templates)
 
 Here's the universal reference rule of initialized :
 
@@ -118,6 +119,7 @@ A final point is worth bearing in mind: the lvalueness or rvalueness of en expre
 
 ## type deduction of an universal reference
 Here is the reference-collapsing rule:
+
 1. An rvalue reference to an rvalue reference becomes (“collapses into”) an rvalue reference.
 2. All other references to references (i.e., all combinations involving an lvalue reference) collapse into an lvalue reference.
 
@@ -170,5 +172,9 @@ f(r2);
 the deduced type for both r1 and r2 is int&. Why? First the reference parts of r1’s and r2’s types are stripped off (yielding int in both cases), then, because each is an lvalue, each is treated as int& during type deduction for the universal reference parameter in the call to f.
 
 
+#Reference
+
+1.[http://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers](http://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers)
+2.[http://thbecker.net/articles/rvalue_references/section_01.html](http://thbecker.net/articles/rvalue_references/section_01.html)
 
 
