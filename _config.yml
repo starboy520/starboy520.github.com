@@ -1,5 +1,5 @@
 root: /
-permalink: /:categories/:year/:month/:day/:title/
+permalink: pretty 
 markdown: rdiscount
 pygments: false
 paginate: 5
