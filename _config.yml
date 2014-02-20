@@ -1,4 +1,5 @@
 root: /
+permalink: /:categories/:year/:month/:day/:title/
 markdown: rdiscount
 pygments: false
 paginate: 5
