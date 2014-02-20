@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "Rvalue reference"
-date:   2014-02-18 21:41:24
-categories: [c++11]
+categories: c++11
 ---
 
 #Lvalue And Rvalue
